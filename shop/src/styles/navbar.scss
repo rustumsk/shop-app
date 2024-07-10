@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+.container {
+    display: flex;
+    height: 5rem;
+    margin: none;
+    padding: none;
+    border-bottom: solid 3px black;
+
+    .icon {
+        flex: 1;
+        display: flex;
+        text-decoration: none;
+        color: black;
+        .c {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        .ic {
+            width: 2rem;
+            height: 2rem;
+            background-image: url("../assets/cart.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .i {
+            flex: 1;
+            display: grid;
+            place-content: center;
+            justify-content: end;
+        }
+    }
+
+    .links {
+        flex: .5;
+        display: flex;
+        justify-content: flex-end; /* Adjust as needed */
+        gap: 2rem; /* Adjust spacing between links */
+        .link {
+            display: grid;
+            place-content: center;
+            font-size: 1.3rem;
+            font-family: "Montserrat";
+            text-decoration: none;
+            color: black;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .active {
+            font-weight: bold; /* Example of active link style */
+            color: red; /* Example of active link color */
+        }
+    }
+
+    .title {
+        flex: 1;
+        display: grid;
+        place-content: center;
+        font-size: 2rem;
+        justify-content: start;
+        padding-left: 2rem;
+        p {
+            margin: 0;
+            font-family: "Montserrat";
+            font-weight: bold;
+        }
+    }
+}

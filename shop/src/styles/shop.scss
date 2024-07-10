@@ -1,0 +1,120 @@
+.options {
+    background-color: black;
+    animation: grow 2s ease-in 0s 1 normal forwards;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+        color: white;
+        font-size: 1.2rem;
+        font-family: "Montserrat";
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &.active {
+            color: red; // Example of active button color
+            font-weight: bold;
+        }
+
+        &:hover {
+            color: gray; // Example of hover color
+        }
+    }
+}
+
+.display {
+    display: grid;
+    padding: 2rem;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    .card {
+        height: 30rem;
+        border: solid 3px gray;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .c-i {
+            flex: 8;
+            padding: 1rem;
+            display: grid;
+            place-content: center;
+
+            .c-icon {
+                height: 15rem;
+                width: 20rem;
+                background-repeat: no-repeat;
+                background-size: 60%;
+                background-position: center;
+            }
+        }
+
+        .c-name,
+        .c-price {
+            flex: 1;
+            display: grid;
+            place-content: center;
+            font-size: 1rem;
+        }
+
+        .c-b {
+            flex: 2;
+            display: grid;
+            place-content: center;
+
+            .c-add {
+                height: 2rem;
+                width: 10rem;
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 6px;
+                color: black;
+                font-size: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    border-color: black;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1279px) {
+    .display {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 980px) {
+    .display {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 668px) {
+    .display {
+        grid-template-columns: 1fr;
+    }
+}
